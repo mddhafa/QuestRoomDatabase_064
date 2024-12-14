@@ -15,11 +15,14 @@ interface MahasiswDao {
         mahasiswa: Mahasiswa
     )
 
-    @Query ("SELECT * FROM mahasiswa ORDER BY nama ASC")
+    @Query("SELECT * FROM mahasiswa ORDER BY nama ASC")
     fun getAllMahasiswa(): Flow<List<Mahasiswa>>
 
-    @Query ("SELECT * FROM mahasiswa WHERE nim = :nim")
+    @Query("SELECT * FROM mahasiswa WHERE nim = :nim")
     fun getMahasiswa(nim: String): Flow<Mahasiswa>
+
+    @Delete
+    suspend fun deleteMahasiswa(mahasiswa: Mahasiswa)
 
 }
 
