@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
@@ -23,7 +25,26 @@ import androidx.compose.ui.unit.sp
 import com.example.roomlocaldb.data.entity.Mahasiswa
 import org.w3c.dom.Text
 
-
+@Composable
+fun ListMahasiswa (
+    listMhs: List<Mahasiswa>,
+    modifier: Modifier = Modifier,
+    onClick: (String) -> Unit = { }
+){
+    LazyColumn (
+        modifier = Modifier
+    ){
+        items(
+            items = listMhs,
+            itemContent = { mhs ->
+                CardMhs(
+                    mhs = mhs,
+                    onClick = { onClick (mhs.nim)}
+                )
+            }
+        )
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
