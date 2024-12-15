@@ -5,4 +5,10 @@ data class DetailUiState(
     val isLoading: Boolean = false,
     val isError: Boolean = false,
     val errorMessage: String = ""
-)
+) {
+    val isUiEventEmpty: Boolean
+        get() = detailUiEvent == MahasiswaEvent()
+
+    val isEventNotEmpty: Boolean
+        get () = detailUiEvent != MahasiswaEvent()
+}
