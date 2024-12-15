@@ -23,7 +23,7 @@ class UpdateMhsViewModel(
     var updateUiState by mutableStateOf(MhsUiState())
         private set
 
-    private val _nim: String = checkNotNull(savedStateHandle[DestinasiEdit.NIM])
+    private val _nim: String = checkNotNull(savedStateHandle[AlamatNavigasi.DestinasiUpdate.NIM])
 
 
     init {
