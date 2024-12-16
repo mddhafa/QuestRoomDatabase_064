@@ -74,7 +74,24 @@ fun PengelolaHalaman(
                 )
             }
         }
-
+        composable(
+            AlamatNavigasi.DestinasiUpdate.routesWithArg,
+            arguments = listOf(
+                navArgument(AlamatNavigasi.DestinasiUpdate.NIM) {
+                    type = NavType.StringType
+                }
+            )
+        ) {
+            UpdateMhsView(
+                onBack = {
+                    navController.popBackStack()
+                },
+                onNavigate = {
+                    navController.popBackStack()
+                },
+                modifier = modifier
+            )
+        }
 
     }
 }
