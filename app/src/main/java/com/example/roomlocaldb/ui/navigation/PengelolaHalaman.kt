@@ -50,6 +50,30 @@ fun PengelolaHalaman(
                 modifier = Modifier
             )
         }
+        composable(
+            AlamatNavigasi.DestinasiDetail.routesWithArg,
+            arguments = listOf(
+                navArgument(AlamatNavigasi.DestinasiDetail.NIM) {
+                    type = NavType.StringType
+                }
+            )
+        ) {
+            val nim = it.arguments?.getString(AlamatNavigasi.DestinasiDetail.NIM)
+            nim?.let { nim ->
+                DetailMhsView(
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                    onEditClick = {
+                        navController.navigate("${AlamatNavigasi.DestinasiUpdate.route}/$it")
+                    },
+                    modifier = modifier,
+                    onDeleteClick = {
+                        navController.popBackStack()
+                    }
+                )
+            }
+        }
 
 
     }
