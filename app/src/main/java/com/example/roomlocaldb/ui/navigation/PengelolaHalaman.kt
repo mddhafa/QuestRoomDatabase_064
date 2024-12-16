@@ -1,33 +1,28 @@
 package com.example.roomlocaldb.ui.navigation
-
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.roomlocaldb.ui.view.mahasiswa.DestinasiInsert
+import com.example.roomlocaldb.ui.view.mahasiswa.DetailMhsView
+import com.example.roomlocaldb.ui.view.mahasiswa.HomeMhsView
 import com.example.roomlocaldb.ui.view.mahasiswa.InsertMhsView
+import com.example.roomlocaldb.ui.view.mahasiswa.UpdateMhsView
 
-object DestinasiInsert : AlamatNavigasi{
-    override val route: String ="insert_mhs"
-}
 
 @Composable
-fun PegelolaHalaman(
+fun PengelolaHalaman(
     navController: NavHostController = rememberNavController(),
-    modifier: Modifier = Modifier
-){
+    modifier: Modifier
+) {
     NavHost(
         navController = navController,
-        startDestination = DestinasiInsert.route
-    ){
-        composable(
-            route = DestinasiInsert.route
-        ){
-            InsertMhsView(
-                onBack = {},
-                onNavigate = {}
-            )
-        }
+        startDestination = AlamatNavigasi.DestinasiHome.route
+    ) {
+
     }
 }
