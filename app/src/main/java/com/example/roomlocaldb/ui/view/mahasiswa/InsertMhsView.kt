@@ -26,12 +26,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomlocaldb.ui.customwidget.TopAppBar
+import com.example.roomlocaldb.ui.navigation.AlamatNavigasi
 import com.example.roomlocaldb.ui.viewmodel.FormErrorState
 import com.example.roomlocaldb.ui.viewmodel.MahasiswaEvent
 import com.example.roomlocaldb.ui.viewmodel.MahasiswaViewModel
 import com.example.roomlocaldb.ui.viewmodel.MhsUiState
 import com.example.roomlocaldb.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
+
+object DestinasiInsert : AlamatNavigasi {
+    override val route: String = "insert_mhs"
+}
 
 @Preview(showBackground = true)
 @Composable
