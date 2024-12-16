@@ -1,4 +1,4 @@
-package com.example.roomlocaldb.ui.view.Mahasiswa
+package com.example.roomlocaldb.ui.view.mahasiswa
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
