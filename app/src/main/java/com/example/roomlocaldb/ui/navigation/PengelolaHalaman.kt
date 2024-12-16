@@ -23,6 +23,20 @@ fun PengelolaHalaman(
         navController = navController,
         startDestination = AlamatNavigasi.DestinasiHome.route
     ) {
+        composable(
+            route = AlamatNavigasi.DestinasiHome.route
+        ) {
+            HomeMhsView(
+                onDetailClick = { nim ->
+                    navController.navigate("${AlamatNavigasi.DestinasiDetail.route}/$nim")
+                    println("PengelolaHalaman: nim = $nim")
+                },
+                onAddMhs = {
+                    navController.navigate(DestinasiInsert.route)
+                },
+                modifier = Modifier
+            )
+        }
 
     }
 }
